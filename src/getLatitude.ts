@@ -4,15 +4,7 @@ import getCoordinateKey from './getCoordinateKey';
 import toDecimal from './toDecimal';
 
 const getLatitude = (point: GeolibInputCoordinates, raw?: boolean) => {
-    const latKey = getCoordinateKey(point, latitudeKeys);
-
-    if (typeof latKey === 'undefined' || latKey === null) {
-        return;
-    }
-
-    const value = point[latKey as keyof LatitudeKeys];
-
-    return raw === true ? value : toDecimal(value);
+    return point.latitude;
 };
 
 export default getLatitude;
