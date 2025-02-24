@@ -12,14 +12,9 @@ export type LongitudeKeys = 'lng' | 'lon' | 'longitude' | 0;
 export type LatitudeKeys = 'lat' | 'latitude' | 1;
 export type AltitudeKeys = 'alt' | 'altitude' | 'elevation' | 'elev' | 2;
 
-export type GeolibInputLongitude =
-    | { lng: GeolibLongitudeInputValue }
-    | { lon: GeolibLongitudeInputValue }
-    | { longitude: GeolibLongitudeInputValue };
+export type GeolibInputLongitude = { longitude: GeolibLongitudeInputValue };
 
-export type GeolibInputLatitude =
-    | { lat: GeolibLatitudeInputValue }
-    | { latitude: GeolibLatitudeInputValue };
+export type GeolibInputLatitude = { latitude: GeolibLatitudeInputValue };
 
 export type GeolibInputAltitude =
     | { alt?: GeolibAltitudeInputValue }
@@ -31,7 +26,7 @@ export type UserInputCoordinates = GeolibInputLongitude &
     GeolibInputLatitude &
     GeolibInputAltitude;
 
-export type GeolibInputCoordinates = UserInputCoordinates | GeolibGeoJSONPoint;
+export type GeolibInputCoordinates = { longitude: number; latitude: number };
 
 export type GeolibDistanceFn = (
     point: GeolibInputCoordinates,

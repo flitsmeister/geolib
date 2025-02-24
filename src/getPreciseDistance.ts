@@ -31,12 +31,8 @@ const getDistance = (
     let cos2SigmaM;
     let sinSigma;
 
-    const U1 = Math.atan(
-        (1 - ellipsoidParams) * Math.tan(toRad(parseFloat(startLat)))
-    );
-    const U2 = Math.atan(
-        (1 - ellipsoidParams) * Math.tan(toRad(parseFloat(endLat)))
-    );
+    const U1 = Math.atan((1 - ellipsoidParams) * Math.tan(toRad(startLat)));
+    const U2 = Math.atan((1 - ellipsoidParams) * Math.tan(toRad(endLat)));
     const sinU1 = Math.sin(U1);
     const cosU1 = Math.cos(U1);
     const sinU2 = Math.sin(U2);
